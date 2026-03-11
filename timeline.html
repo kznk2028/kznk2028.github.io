@@ -42,25 +42,6 @@ width:100%;
 max-width:var(--max-width);
 }
 
-/* タイトル */
-
-.site-title{
-text-align:center;
-margin-bottom:25px;
-}
-
-.site-title h1{
-margin:0;
-font-size:46px;
-letter-spacing:4px;
-font-weight:700;
-}
-
-.site-title p{
-margin-top:6px;
-opacity:.7;
-}
-
 /* レイアウト */
 
 .layout{
@@ -220,19 +201,9 @@ grid-template-columns:1fr;
 
 <div class="wrapper">
 
-<div class="site-title">
-<h1>無法地帯</h1>
-<p>創作メモタイムライン</p>
-</div>
-
 <div class="layout">
 
 <div>
-
-<div class="post-box">
-<textarea id="newPost" rows="3" placeholder="今何してる？"></textarea>
-<button class="post-btn" onclick="addPost()">投稿</button>
-</div>
 
 <div class="timeline" id="timeline"></div>
 
@@ -305,28 +276,6 @@ el.innerHTML=`
 timeline.appendChild(el)
 
 })
-
-}
-
-function addPost(){
-
-const text=document.getElementById("newPost").value.trim()
-
-if(!text) return
-
-const today=new Date().toISOString().slice(0,10)
-
-posts.unshift({
-text:text,
-date:today,
-likes:0
-})
-
-localStorage.setItem("posts",JSON.stringify(posts))
-
-document.getElementById("newPost").value=""
-
-render()
 
 }
 
