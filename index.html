@@ -243,6 +243,18 @@ nav.topnav a{
   margin:0;
 }
 
+.character-card{
+  background:#fff;
+  border-radius:10px;
+  padding:10px;
+  border:1px solid #f2ebe0;
+  transition:.2s;
+}
+
+.character-card:hover{
+  transform:translateY(-4px);
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width:900px){
   .main{
@@ -268,11 +280,11 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .profile,
-  .sidebar,
-  #contact{
-    display:none;
-  }
+.profile,
+.sidebar,
+#characters{
+  display:none;
+}
 
   .gallery{
     grid-template-columns:repeat(2,1fr);
@@ -290,50 +302,38 @@ footer{
 
 }
 
-/* ===== お問い合わせ ===== */
+/* ===== キャラクター ===== */
 
-#contact h2{
-  margin-top:0;
-  font-size:18px;
+.character-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
 }
 
-.contact-form{
-  margin-top:15px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+.character-card{
+  background:#fff;
+  border-radius:10px;
+  padding:10px;
+  border:1px solid #f2ebe0;
+  transition:.2s;
 }
 
-.contact-form label{
-  font-weight:700;
+.character-card:hover{
+  transform:translateY(-4px);
 }
 
-.contact-form input,
-.contact-form textarea{
+.character-card img{
   width:100%;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #e3d7c7;
-  font-family:inherit;
+  border-radius:6px;
 }
 
-.contact-form textarea{
-  resize:vertical;
-}
-
-.contact-form button{
-  margin-top:10px;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  background:var(--accent);
-  color:white;
+.character-name{
   font-weight:700;
-  cursor:pointer;
+  margin-top:6px;
 }
 
-.contact-form button:hover{
-  opacity:0.9;
+.character-desc{
+  font-size:13px;
 }
 
 </style>
@@ -358,7 +358,7 @@ footer{
 <nav class="topnav">
 <a href="#works">作品一覧</a>
 <a href="#about">プロフィール</a>
-<a href="#contact">お問い合わせ</a>
+<a href="#characters">キャラクター</a>
 </nav>
 </header>
 
@@ -484,28 +484,53 @@ footer{
 </div>
 </section>
 
-<section class="content" id="contact">
+<section class="content" id="characters">
 
-<h2>お問い合わせ</h2>
-<p>感想やご連絡などお気軽にどうぞ。</p>
+<h2>SNSアカウント</h2>
 
-<form action="https://formspree.io/f/xxxxxxx" method="POST" class="contact-form">
+<div class="character-grid">
 
-<label>お名前</label>
-<input type="text" name="name" required>
+<div class="character-card">
+<a href="https://taittsuu.com/users/wako2028">
+<img src="top/taitsu.PNG" alt="タイッツー">
+</a>
+<div class="character-name">タイッツー</div>
+<div class="character-desc">
+タイツアカウント用リンク
+</div>
+</div>
 
-<label>メールアドレス</label>
-<input type="email" name="email" required>
+<div class="character-card">
+<a href="https://note.com/tokutokiii">
+<img src="top/note.PNG" alt="note">
+</a>
+<div class="character-name">note</div>
+<div class="character-desc">
+noteアカウント用リンク
+</div>
+</div>
 
-<label>件名</label>
-<input type="text" name="subject">
+<div class="character-card">
+<a href="https://www.instagram.com/tokutokiii/">
+<img src="top/insuta.PNG" alt="Instagram">
+</a>
+<div class="character-name">インスタ</div>
+<div class="character-desc">
+インスタアカウント用リンク
+</div>
+</div>
 
-<label>メッセージ</label>
-<textarea name="message" rows="6" required></textarea>
+<div class="character-card">
+<a href="https://www.pixiv.net/users/123192577">
+<img src="top/pixiv.PNG" alt="pixiv">
+</a>
+<div class="character-name">pixiv</div>
+<div class="character-desc">
+pixivアカウント用リンク
+</div>
+</div>
 
-<button type="submit">送信する(できない)</button>
-
-</form>
+</div>
 
 </section>
 
